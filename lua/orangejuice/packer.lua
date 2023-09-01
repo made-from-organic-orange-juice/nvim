@@ -1,45 +1,45 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 return require('packer').startup(function(use)
-	-- Packer can manage itself
-	use 'wbthomason/packer.nvim'
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
 
-	-- https://github.com/nvim-telescope/telescope.nvim
-	-- fuzzy finder
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.2',
-		-- or                            , branch = '0.1.x',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
+    -- https://github.com/nvim-telescope/telescope.nvim
+    -- fuzzy finder
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.2',
+        -- or                            , branch = '0.1.x',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    }
 
-	-- my color theme
-	use { "ellisonleao/gruvbox.nvim" }
+    -- my color theme
+    use { "ellisonleao/gruvbox.nvim" }
 
-	-- treesitter for highligting and all that https://github.com/nvim-treesitter/nvim-treesitter
-	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
+    -- treesitter for highligting and all that https://github.com/nvim-treesitter/nvim-treesitter
+    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
-	-- undo tree
-	use('mbbill/undotree')
+    -- undo tree
+    use('mbbill/undotree')
 
-	-- vim fugitive git plugin
-	use('tpope/vim-fugitive')
+    -- vim fugitive git plugin
+    use('tpope/vim-fugitive')
 
-	-- LSP Zero
-	use {
-		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v2.x',
-		requires = {
-			-- LSP Support
-			{'neovim/nvim-lspconfig'},             -- Required
-			{'williamboman/mason.nvim'},           -- Optional
-			{'williamboman/mason-lspconfig.nvim'}, -- Optional
+    -- LSP Zero
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v2.x',
+        requires = {
+            -- LSP Support
+            { 'neovim/nvim-lspconfig' },             -- Required
+            { 'williamboman/mason.nvim' },           -- Optional
+            { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
-			-- Autocompletion
-			{'hrsh7th/nvim-cmp'},     -- Required
-			{'hrsh7th/cmp-nvim-lsp'}, -- Required
-			{'L3MON4D3/LuaSnip'},     -- Required
-		}
-	}
+            -- Autocompletion
+            { 'hrsh7th/nvim-cmp' },     -- Required
+            { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+            { 'L3MON4D3/LuaSnip' },     -- Required
+        }
+    }
 
     -- copilot
     use { "zbirenbaum/copilot.lua" }
@@ -51,6 +51,18 @@ return require('packer').startup(function(use)
     use { "nvim-tree/nvim-tree.lua" }
     use { "kyazdani42/nvim-web-devicons" }
 
+    -- lualine
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
 
+    -- alpha nvim (welcome screen)
+    use {
+        'goolord/alpha-nvim',
+        config = function()
+            require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
+        end
+    }
 end)
 --

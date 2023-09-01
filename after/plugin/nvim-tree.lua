@@ -21,7 +21,7 @@ require("nvim-tree").setup {
 }
 
 -- open nvim-tree on startup
-vim.cmd("autocmd VimEnter * NvimTreeOpen")
+-- vim.cmd("autocmd VimEnter * NvimTreeOpen")
 
 -- map open nvim-tree
 
