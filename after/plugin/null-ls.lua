@@ -11,8 +11,14 @@ null_ls.setup({
     sources = {
         formatting.stylua,
         formatting.prettier,
+        formatting.clang_format,
+        formatting.autopep8,
+        diagnostics.pycodestyle,
         diagnostics.write_good,
         diagnostics.eslint,
+        diagnostics.clang_check,
+        diagnostics.cppcheck
+
     }
 })
 

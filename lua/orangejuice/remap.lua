@@ -25,3 +25,16 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "previous search - keep search in the
 vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz", { desc = "next quickfix" });
 vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz", { desc = "previous quickfix" });
 
+-- for copy and paste in visual mode
+vim.keymap.set("x", "<leader>p", "\"_dP", { desc = "paste in visual mode" });
+
+-- for copy and paste in normal mode
+vim.keymap.set("n", "<leader>y" , "\"+y", { desc = "copy in normal mode" });
+vim.keymap.set("v", "<leader>y" , "\"+y", { desc = "copy in visual mode" });
+vim.keymap.set("n", "<leader>Y", "\"+Y", { desc = "copy in normal mode" });
+
+vim.keymap.set("n", "<leader>d", "\"_d", { desc = "delete in normal mode" });
+vim.keymap.set("v", "<leader>d", "\"_d", { desc = "delete in visual mode" });
+
+
+
